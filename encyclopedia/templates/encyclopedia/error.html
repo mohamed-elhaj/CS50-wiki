@@ -3,6 +3,6 @@
 {% block title %} Error {% endblock %}
 
 {% block body %}
-    <h1>Error 404</h1>
-    <h2>{{name}} not found!</h2>
+    <h1>{{ error_type }}</h1>
+    <h2>{{ error_content }}</h2>
 {% endblock %}
