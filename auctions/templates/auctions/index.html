@@ -1,0 +1,39 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+{% for category in categories %}
+  <li class="nav-item" style="display: inline-block">
+      <a class="nav-link" href="{% url 'category' category.id %}">{{category.category}}</a>
+  </li>
+{% endfor %}
+    <h2>Active Listings</h2>
+    <!-- Card -->
+    <div class="products row">
+      {% if listings %}
+        {% for listing in listings %}
+        <form class="card col-lg-3"  action="{% url 'listing' listing.id %}" style="width: 17rem;">
+            <img src="{{listing.imageURL}}" class="card-img-top" alt="..." style="max-width: 60%">
+            <div class="card-body">
+              <h5 class="card-title">{{listing.title}}</h5>
+              <p class="card-text">{{ listing.description | default:"Lorem Ipsum"}}</p>
+              <p class="card-text">Current Bid: <span style="color: green">{{ listing.currentPrice |default_if_none:"--"}}$</span></p>
+              <p class="card-text">Starting Bid: ${{ listing.startingPrice}}</p>
+              <div>
+                Category: <a href="{% url 'category' listing.category.id %}">
+                  {{listing.category}}
+                </a>
+              </div>
+              <div style="color: #666; font-size: 12px">
+                Created Date: {{listing.creationDate}}
+              </div>
+            </form>
+              <input type="submit" class="btn btn-primary" value="View Item">
+              <!-- <a href="#" class="btn btn-primary">Add to Watchlist</a> -->
+            </div>
+          </form>
+        {% endfor %}
+        {% else %}
+        <div style="width: 100%; text-align: center" class="alert alert-primary">This page is empty!</div>
+        {% endif %}
+    </form>
+    
+{% endblock %}

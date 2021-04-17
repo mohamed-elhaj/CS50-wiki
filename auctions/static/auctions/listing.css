@@ -1,0 +1,27 @@
+.listing {
+  padding: 80px;
+}
+
+
+img {
+  max-width: 60%;
+
+}
+
+
+.i {
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+form {
+  line-height: 2.5;
+
+}
+
+form input {
+  line-height: 1.6;
+  float: right;
+  width: auto;
+}

@@ -1,8 +1,0 @@
-{% extends "encyclopedia/layout.html" %}
-
-{% block title %} {{title}} {% endblock %}
-
-{% block body %}
-    {{content|safe}}
-    <a href="/wiki/{{title}}/edit" style="color: white"><button class="btn btn-primary">Edit</button></a>
-{% endblock %}

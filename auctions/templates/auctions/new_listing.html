@@ -1,0 +1,53 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+
+    <form action="{% url 'new_listing' %}" method='post' class="text-center" autocomplete="off">
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <input type="submit" class='btn btn-primary'>
+        </div>
+    </form>
+
+<style>
+
+    /* form {
+        width: 80%;
+        text-align: center;
+        padding: 30px;
+        background-color: whitesmoke;
+    } */
+
+    label, select {
+        text-align: left;
+        width: 80%;
+        font-size: 20px;
+
+    }
+
+    input {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        line-height: 1.7;
+        width: 80%;
+        margin: 30px 0;
+    }
+
+    div {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+        width: 150px;
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 20px;
+
+    }
+
+</style>
+{% endblock %}
