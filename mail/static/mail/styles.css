@@ -1,0 +1,22 @@
+textarea {
+    min-height: 400px;
+}
+
+#mail-container {
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: whitesmoke;
+}
+
+
+#email-div {
+    font-weight: bold;
+}
+
+i {
+    font-size: 30px;
+    cursor: pointer;
+    box-sizing: content-box;
+}
